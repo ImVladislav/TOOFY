@@ -479,13 +479,68 @@ body {
 }
 
 .social-icon img {
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
   transition: transform 0.3s;
 }
 
 .social-icon:hover img {
   transform: scale(1.1);
+}
+
+/* Mobile Portrait Optimizations */
+@media (max-width: 768px) {
+  /* HTB title mobile optimization */
+  .htb-title {
+    height: 60px;
+    max-width: 90%;
+    margin-bottom: 30px;
+  }
+  
+  /* Social icons mobile optimization */
+  .social-icons {
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .social-icon img {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .htb-title {
+    height: 50px;
+    max-width: 95%;
+    margin-bottom: 25px;
+  }
+  
+  .social-icons {
+    gap: 12px;
+    margin-top: 25px;
+  }
+  
+  .social-icon img {
+    width: 65px;
+    height: 65px;
+  }
+  
+  /* Even smaller screens optimization */
+  .social-content {
+    padding: 0 10px;
+  }
+  
+  .main-character img {
+    max-width: 250px;
+  }
+  
+  .social-photos img {
+    max-width: 180px;
+    width: 75%;
+  }
 }
 .hero-section {
   margin-top: 90px;
@@ -928,5 +983,51 @@ body {
   .social-title {
     height: 180px;
     margin-bottom: 30px;
+  }
+  
+  /* Social content vertical layout for mobile */
+  .social-content {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    max-width: 100%;
+  }
+  
+  .main-character {
+    order: 1;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .main-character img {
+    max-width: 280px;
+    width: 100%;
+    height: auto;
+  }
+  
+  .social-photos {
+    order: 2;
+    margin-left: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 10px;
+    width: 100%;
+  }
+  
+  .social-photos img {
+    max-width: 200px;
+    width: 80%;
+    height: auto;
+    margin-bottom: 0;
+  }
+  
+  .social-photos img:nth-child(2) {
+    align-self: center;
+    margin-left: 0;
+  }
+  
+  .social-photos img:nth-child(3) {
+    align-self: center;
   }
 }
