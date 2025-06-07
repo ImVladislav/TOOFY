@@ -31,8 +31,9 @@ function init() {
     });
   }
 
-  // Scroll animation
+  // Scroll animation with paper roll image changes
   const scrollContainer = document.querySelector(".scroll-container");
+  const paperRoll = document.querySelector(".paper-roll");
   
   if (scrollContainer) {
     function handleScroll() {
@@ -55,6 +56,20 @@ function init() {
       // Збільшуємо діапазон руху для повного приховування
       const translateX = progress * 120; // Збільшуємо до 120% для повного приховування
       scrollContainer.style.transform = `translateX(${translateX}%)`;
+      
+      // Change paper roll image based on scroll progress
+      if (paperRoll) {
+        if (progress <= 0.33) {
+          // First third of animation - paper_roll_1.png
+          paperRoll.src = "images/paper_roll_1.png";
+        } else if (progress <= 0.66) {
+          // Second third of animation - paper_roll_2.png
+          paperRoll.src = "images/paper_roll_2.png";
+        } else {
+          // Final third of animation - paper_roll_3.png
+          paperRoll.src = "images/paper_roll_3.png";
+        }
+      }
     }
 
     window.addEventListener("scroll", handleScroll);
