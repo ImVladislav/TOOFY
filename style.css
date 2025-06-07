@@ -298,15 +298,99 @@ body {
 /* How to Buy Section */
 .how-to-buy-section {
   padding: 100px 20px;
-  background: url("images/brick-bg.jpg") center/cover;
+  background: url("images/howBg.png") center/cover;
   text-align: center;
 }
 
-.how-to-buy-section h2 {
-  font-size: 3rem;
+.htb-title {
+  width: auto;
+  height: 100px;
   margin-bottom: 50px;
+  object-fit: contain;
+}
+
+.buy-steps {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 50px 0;
+  flex-wrap: wrap;
+}
+
+.step-card {
+  width: 300px;
+  min-height: 350px;
+  padding: 30px 20px;
+  text-align: center;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.step-1 {
+  background-image: url("images/paper1.png");
+}
+
+.step-2 {
+  background-image: url("images/paper2.png");
+}
+
+.step-3 {
+  background-image: url("images/paper3.png");
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  background: #333;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: 'Creepster', cursive;
+}
+
+.step-card h3 {
+  font-family: 'Creepster', cursive;
+  font-size: 24px;
   color: #333;
-  text-transform: uppercase;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+}
+
+.step-card p {
+  font-family: 'Creepster', cursive;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.3);
+  padding: 15px;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+}
+
+@media (max-width: 768px) {
+  .buy-steps {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .step-card {
+    width: 90%;
+    max-width: 350px;
+  }
 }
 
 .contract-address {
@@ -722,7 +806,7 @@ body {
 
 .social-title {
   width: auto;
-  height: 80px;
+  height: 240px;
   margin-bottom: 40px;
   object-fit: contain;
 }
@@ -742,7 +826,7 @@ body {
   }
 
   .social-title {
-    height: 60px;
+    height: 180px;
     margin-bottom: 30px;
   }
 }
