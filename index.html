@@ -4,175 +4,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Toofy - Meme Coin</title>
+  <title>TOOFY</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="script.js"></script>
 </head>
 
 <body>
-
-  <header class="header">
-    <div class="header-container">
-      <div class="logo">
-        <img src="images/toofy-logo.png" alt="Toofy" class="logo-image">
-        <span class="logo-text">TOOFY</span>
-      </div>
-      <nav class="nav">
-        <ul class="nav-list">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#social">Social</a></li>
-          <li><a href="#how-to-buy">How to Buy</a></li>
-          <li><a href="#roadmap">Roadmap</a></li>
-          <li><a href="#whitepaper">Whitepaper</a></li>
-        </ul>
-      </nav>
-      <button class="mobile-menu-btn">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+  <nav class="navigation">
+    <div class="nav-background"></div>
+    <div class="nav-logo">
+      <img src="images/toofy_mid.png" alt="Toofy">
     </div>
-  </header>
+    <button class="burger-menu" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links">
+      <li>
+        <a href="#home" class="nav-link">
+          <img src="images/Home.png" alt="Home" class="nav-image default">
+          <img src="images/Home1.png" alt="Home" class="nav-image hover">
+        </a>
+      </li>
+      <li>
+        <a href="#social" class="nav-link">
+          <img src="images/Social.png" alt="Social" class="nav-image default">
+          <img src="images/Social1.png" alt="Social" class="nav-image hover">
+        </a>
+      </li>
+      <li>
+        <a href="#how-to-buy" class="nav-link">
+          <img src="images/how_to_buy.png" alt="How to buy" class="nav-image default">
+          <img src="images/how_to_buy1.png" alt="How to buy" class="nav-image hover">
+        </a>
+      </li>
+      <li>
+        <a href="#gallery" class="nav-link">
+          <img src="images/Gallery.png" alt="Gallery" class="nav-image default">
+          <img src="images/Gallery1.png" alt="Gallery" class="nav-image hover">
+        </a>
+      </li>
+    </ul>
+  </nav>
 
-  <main>
-    <section id="home" class="hero-section">
-      <div class="container">
-        <div class="hero-content">
-          <h1 class="animate__animated animate__fadeIn">Welcome to Toofy</h1>
-          <div class="hero-character animate__animated animate__bounceIn">
-            <img src="images/toofy-character.png" alt="Toofy Character">
-          </div>
-          <p class="animate__animated animate__fadeIn">The cutest meme coin in the crypto universe!</p>
-          <div class="cta-buttons">
-            <a href="#" class="btn btn-primary animate__animated animate__pulse animate__infinite">Buy Now</a>
-            <a href="#" class="btn btn-secondary">Join Community</a>
-          </div>
-        </div>
+  <section class="hero-section">
+    <!-- Hero content here if needed -->
+  </section>
+
+  <section id="social" class="social-section">
+    <h2>SOCIAL</h2>
+    <div class="social-content">
+      <div class="main-character">
+        <img src="images/toofy-character-social.png" alt="Toofy Social">
       </div>
-    </section>
-
-
-
-    <section id="social" class="social-section">
-      <div class="container">
-        <h2 class="section-title animate__animated animate__fadeIn">Join Our Community</h2>
-        <div class="social-grid">
-          <a href="https://twitter.com/toofy" target="_blank" class="social-card twitter">
-            <div class="social-icon">
-              <img src="images/twitter.png" alt="Twitter">
-            </div>
-            <h3>Twitter</h3>
-            <p>Follow us for latest updates</p>
-          </a>
-          <a href="https://t.me/toofycoin" target="_blank" class="social-card telegram">
-            <div class="social-icon">
-              <img src="images/telegram.png" alt="Telegram">
-            </div>
-            <h3>Telegram</h3>
-            <p>Join our community chat</p>
-          </a>
-          <a href="https://www.dextools.io/app/" target="_blank" class="social-card dextools">
-            <div class="social-icon">
-              <img src="images/dextools.png" alt="Dextools">
-            </div>
-            <h3>Dextools</h3>
-            <p>Check our charts</p>
-          </a>
-          <a href="https://dexscreener.com/" target="_blank" class="social-card dexscreener">
-            <div class="social-icon">
-              <img src="images/dexscreener.png" alt="Dexscreener">
-            </div>
-            <h3>Dexscreener</h3>
-            <p>View market analysis</p>
-          </a>
-        </div>
+      <div class="social-photos">
+        <img src="images/social-1.png" alt="Social 1">
+        <img src="images/social-2.png" alt="Social 2">
+        <img src="images/social-3.png" alt="Social 3">
       </div>
-    </section>
-
-    <section id="how-to-buy" class="how-to-buy-section">
-      <div class="container">
-        <h2 class="section-title animate__animated animate__fadeIn">How to Buy $TOOFY</h2>
-        <div class="steps-grid">
-          <div class="step-card">
-            <div class="step-number">1</div>
-            <h3>Create Wallet</h3>
-            <p>Download and install MetaMask or Trust Wallet from App Store or Google Play</p>
-          </div>
-          <div class="step-card">
-            <div class="step-number">2</div>
-            <h3>Get ETH</h3>
-            <p>Buy ETH from any exchange and transfer it to your wallet</p>
-          </div>
-          <div class="step-card">
-            <div class="step-number">3</div>
-            <h3>Connect to DEX</h3>
-            <p>Visit Uniswap and connect your wallet</p>
-          </div>
-          <div class="step-card">
-            <div class="step-number">4</div>
-            <h3>Swap for $TOOFY</h3>
-            <p>Paste the $TOOFY contract address and swap your ETH</p>
-            <div class="contract-address">
-              <code>0x123...abc</code>
-              <button class="copy-btn" onclick="copyContract()">Copy</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="roadmap" class="roadmap-section">
-      <div class="container">
-        <h2>Roadmap</h2>
-        <div class="roadmap-timeline">
-          <div class="roadmap-item">
-            <h3>Phase 1</h3>
-            <ul>
-              <li>Website Launch</li>
-              <li>Community Building</li>
-              <li>Token Launch</li>
-            </ul>
-          </div>
-          <div class="roadmap-item">
-            <h3>Phase 2</h3>
-            <ul>
-              <li>Exchange Listings</li>
-              <li>Marketing Campaign</li>
-              <li>Partnership Announcements</li>
-            </ul>
-          </div>
-          <div class="roadmap-item">
-            <h3>Phase 3</h3>
-            <ul>
-              <li>NFT Collection</li>
-              <li>Staking Platform</li>
-              <li>Ecosystem Expansion</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-logo">
-          <img src="images/toofy-logo.png" alt="Toofy">
-        </div>
-        <div class="social-links">
-          <a href="#" target="_blank">Twitter</a>
-          <a href="#" target="_blank">Telegram</a>
-          <a href="#" target="_blank">Discord</a>
-        </div>
-      </div>
-      <p class="copyright">© 2024 Toofy. All rights reserved.</p>
     </div>
-  </footer>
+  </section>
+
+  <section id="how-to-buy" class="how-to-buy-section">
+    <h2>HOW TO BUY</h2>
+    <div class="contract-address">
+      <code>DSFDDFSF3543GDFFFGDRKJLKADW4G546RYKJL</code>
+    </div>
+    <div class="social-icons">
+      <a href="#" class="social-icon"><img src="images/icon-1.png" alt="Icon 1"></a>
+      <a href="#" class="social-icon"><img src="images/icon-2.png" alt="Icon 2"></a>
+      <a href="#" class="social-icon"><img src="images/icon-3.png" alt="Icon 3"></a>
+      <a href="#" class="social-icon"><img src="images/icon-4.png" alt="Icon 4"></a>
+    </div>
+  </section>
+  <script src="script.js"></script>
 </body>
 
 </html>

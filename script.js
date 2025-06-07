@@ -51,20 +51,152 @@ const animateOnScroll = () => {
 // Initialize GSAP
 gsap.registerPlugin(ScrollTrigger);
 
-// GSAP Animations
-gsap.from('.hero-content h1', {
-    duration: 1,
-    y: 50,
+// Wait for DOM to be ready
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM loaded, initializing overlay animation');
+    
+    // Overlay block animation with Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            console.log('Intersection observed:', entry.isIntersecting);
+            const overlay = entry.target;
+            
+            if (entry.isIntersecting) {
+                console.log('Section is visible, sliding overlay');
+                requestAnimationFrame(() => {
+                    overlay.style.transform = 'translateX(-100%)';
+                });
+            } else {
+                console.log('Section is hidden, resetting overlay');
+                requestAnimationFrame(() => {
+                    overlay.style.transform = 'translateX(0)';
+                });
+            }
+        });
+    }, {
+        threshold: 0.2, // Зменшуємо поріг для раннішого спрацювання
+        rootMargin: '-50px 0px' // Змінюємо відступ
+    });
+
+    // Find and observe the social section instead of the overlay
+    const socialSection = document.querySelector('.social-section');
+    if (socialSection) {
+        console.log('Found social section, starting observation');
+        observer.observe(socialSection);
+    } else {
+        console.error('Could not find social section');
+    }
+});
+
+// Burger Menu Functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const burgerMenu = document.querySelector('.burger-menu');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (burgerMenu && navLinks) {
+        burgerMenu.addEventListener('click', () => {
+            burgerMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!burgerMenu.contains(e.target) && !navLinks.contains(e.target)) {
+                burgerMenu.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Close menu when clicking on a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                burgerMenu.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    }
+});
+
+// Hero animations
+gsap.from('.toofy-logo', {
+    duration: 1.5,
+    y: 100,
     opacity: 0,
     ease: 'power3.out'
 });
 
-gsap.from('.hero-character', {
+gsap.from('.tagline', {
+    duration: 1.5,
+    y: 50,
+    opacity: 0,
+    ease: 'power3.out',
+    delay: 0.5
+});
+
+// Social section animations
+gsap.from('.main-character', {
+    scrollTrigger: {
+        trigger: '.social-section',
+        start: 'top center',
+        toggleActions: 'play none none reverse'
+    },
     duration: 1,
+    x: -100,
+    opacity: 0,
+    ease: 'power2.out'
+});
+
+gsap.from('.social-photos img', {
+    scrollTrigger: {
+        trigger: '.social-section',
+        start: 'top center',
+        toggleActions: 'play none none reverse'
+    },
+    duration: 0.8,
     scale: 0,
     opacity: 0,
-    ease: 'back.out(1.7)',
-    delay: 0.5
+    stagger: 0.2,
+    ease: 'back.out(1.7)'
+});
+
+// How to buy section animations
+gsap.from('.contract-address', {
+    scrollTrigger: {
+        trigger: '.how-to-buy-section',
+        start: 'top center',
+        toggleActions: 'play none none reverse'
+    },
+    duration: 1,
+    y: 50,
+    opacity: 0,
+    ease: 'power2.out'
+});
+
+gsap.from('.social-icons a', {
+    scrollTrigger: {
+        trigger: '.how-to-buy-section',
+        start: 'top center',
+        toggleActions: 'play none none reverse'
+    },
+    duration: 0.5,
+    scale: 0,
+    opacity: 0,
+    stagger: 0.1,
+    ease: 'back.out(1.7)'
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            window.scrollTo({
+                top: target.offsetTop - 100,
+                behavior: 'smooth'
+            });
+        }
+    });
 });
 
 // Tokenomics cards animation
