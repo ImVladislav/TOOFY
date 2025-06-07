@@ -37,30 +37,43 @@ function init() {
     if (scrollImage) {
         function handleScroll() {
             const rect = scrollImage.getBoundingClientRect();
-            const triggerPoint = window.innerHeight * 0.7;
+            const parentRect = scrollImage.parentElement.getBoundingClientRect();
             
-            if (rect.top <= triggerPoint) {
-                scrollImage.classList.add('scrolled');
-            } else {
-                scrollImage.classList.remove('scrolled');
-            }
+            // Початок анімації коли верх елементу досягає низу вікна
+            const startPoint = window.innerHeight;
+            // Кінець анімації коли низ елементу досягає верху вікна
+            const endPoint = 0;
+            
+            // Поточна позиція елементу відносно вікна
+            const currentPoint = rect.top;
+            
+            // Розрахунок прогресу анімації (від 0 до 1)
+            const progress = Math.max(0, Math.min(1, 
+                1 - (currentPoint - endPoint) / (startPoint - endPoint)
+            ));
+            
+            // Застосовуємо трансформацію
+            scrollImage.style.transform = `translateX(${progress * 100}%)`;
         }
 
         window.addEventListener('scroll', handleScroll);
+        // Initial check
         handleScroll();
     }
 
-    // Image hover effect
-    document.querySelectorAll('.nav-icon').forEach(icon => {
-        const hoverSrc = icon.getAttribute('data-hover');
-        const defaultSrc = icon.src;
+    // Image hover effect for navigation
+    document.querySelectorAll('.nav-image.default').forEach(icon => {
+        const parent = icon.parentElement;
+        const hoverImage = parent.querySelector('.nav-image.hover');
 
-        icon.addEventListener('mouseenter', () => {
-            icon.src = hoverSrc;
+        parent.addEventListener('mouseenter', () => {
+            icon.style.opacity = '0';
+            hoverImage.style.opacity = '1';
         });
 
-        icon.addEventListener('mouseleave', () => {
-            icon.src = defaultSrc;
+        parent.addEventListener('mouseleave', () => {
+            icon.style.opacity = '1';
+            hoverImage.style.opacity = '0';
         });
     });
 }
@@ -68,6 +81,6 @@ function init() {
 // Run initialization
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
-        } else {
+} else {
     init();
 }
