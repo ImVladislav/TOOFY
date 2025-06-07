@@ -904,6 +904,115 @@ body {
   }
 }
 
+/* Mobile hero image optimization */
+@media (max-width: 768px) {
+  .hero-image {
+    content: url("images/720.png");
+    height: 60vh;
+    width: 100%;
+    max-width: 100vw;
+    margin-left: 0;
+    transform: none;
+    object-fit: contain;
+    margin-top: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-image {
+    height: 50vh;
+    margin-top: 60px;
+  }
+}
+
+/* Fix mobile horizontal scroll for all background sections */
+@media (max-width: 768px) {
+  /* General mobile overflow fixes */
+  * {
+    max-width: 100vw;
+  }
+  
+  /* How to Buy section mobile fix */
+  .how-to-buy-section {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    padding: 80px 15px;
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+  }
+  
+  /* Social section mobile fix */
+  #social {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    padding: 50px 15px;
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+  }
+  
+  /* Buy steps mobile fix */
+  .buy-steps {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+  
+  .step-card {
+    width: calc(100% - 20px);
+    max-width: 300px;
+    margin: 0 auto 20px auto;
+    box-sizing: border-box;
+  }
+  
+  /* Contract address mobile fix */
+  .contract-address {
+    width: calc(100% - 30px);
+    max-width: 500px;
+    margin: 30px auto;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+  
+  .contract-address code {
+    font-size: 0.9rem;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 480px) {
+  .how-to-buy-section {
+    padding: 60px 10px;
+  }
+  
+  #social {
+    padding: 40px 10px;
+  }
+  
+  .step-card {
+    width: calc(100% - 10px);
+    max-width: 280px;
+  }
+  
+  .contract-address {
+    width: calc(100% - 20px);
+    padding: 15px;
+  }
+  
+  .contract-address code {
+    font-size: 0.8rem;
+  }
+}
+
 .scroll-image-wrapper {
   width: 100%;
   overflow: hidden;
