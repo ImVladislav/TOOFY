@@ -77,6 +77,46 @@ function init() {
       hoverImage.style.opacity = "0";
     });
 });
+
+  // Contract address copy functionality
+  const contractAddress = document.getElementById("contract-address");
+  const copyModal = document.getElementById("copy-modal");
+  
+  if (contractAddress && copyModal) {
+    contractAddress.addEventListener("click", async () => {
+      const contractText = "DSFDDFSF3543GDFFFGDRKJLKADW4G546RYKJL";
+      
+      try {
+        // Copy to clipboard
+        await navigator.clipboard.writeText(contractText);
+        
+        // Show modal
+        copyModal.classList.add("show");
+        
+        // Hide modal after 2 seconds
+        setTimeout(() => {
+          copyModal.classList.remove("show");
+        }, 2000);
+        
+      } catch (err) {
+        // Fallback for older browsers
+        const textArea = document.createElement("textarea");
+        textArea.value = contractText;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textArea);
+        
+        // Show modal
+        copyModal.classList.add("show");
+        
+        // Hide modal after 2 seconds
+        setTimeout(() => {
+          copyModal.classList.remove("show");
+        }, 2000);
+      }
+    });
+  }
 }
 
 // Run initialization
