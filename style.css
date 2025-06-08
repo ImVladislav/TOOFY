@@ -321,6 +321,11 @@ body {
   min-width: 250px;
 }
 
+.social-photos a {
+  display: inline-block;
+  text-decoration: none;
+}
+
 .social-photos img {
   width: 70%;
   height: auto;
@@ -340,7 +345,7 @@ body {
   align-self: center;
 }
 
-.social-photos img:hover {
+.social-photos a:hover img {
   transform: scale(1.05);
 }
 
