@@ -180,7 +180,7 @@ body {
   }
 
   .nav-links.active {
-    left: 250px;
+    left: 50%;
   }
 
   .nav-links a {
