@@ -557,13 +557,34 @@ body {
   margin-top: 50px;
 }
 
-.social-icon img {
-  width: 80px;
-  height: 80px;
-  transition: transform 0.3s;
+.social-icon {
+  position: relative;
+  display: inline-block;
 }
 
-.social-icon:hover img {
+.social-img {
+  width: 80px;
+  height: 80px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.social-img.default {
+  opacity: 1;
+}
+
+.social-img.hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.social-icon:hover .social-img.default {
+  opacity: 0;
+}
+
+.social-icon:hover .social-img.hover {
+  opacity: 1;
   transform: scale(1.1);
 }
 
@@ -584,7 +605,7 @@ body {
     justify-content: center;
   }
   
-  .social-icon img {
+  .social-img {
     width: 70px;
     height: 70px;
   }
@@ -602,7 +623,7 @@ body {
     margin-top: 25px;
   }
   
-  .social-icon img {
+  .social-img {
     width: 65px;
     height: 65px;
   }
@@ -1285,4 +1306,91 @@ body {
 .social-content {
     gap: 560px;
 }
+}
+
+/* Gallery Section */
+.gallery-section {
+  background: url("images/howBg.png") center/cover;
+  padding: 100px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-strip {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 50px;
+  width: max-content;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.gallery-strip-right {
+  animation-name: moveRight;
+}
+
+.gallery-strip-left {
+  animation-name: moveLeft;
+}
+
+.gallery-strip img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.gallery-strip img:hover {
+  transform: scale(1.1);
+}
+
+@keyframes moveRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Mobile gallery optimization */
+@media (max-width: 768px) {
+  .gallery-section {
+    padding: 60px 0;
+  }
+  
+  .gallery-strip {
+    gap: 20px;
+    margin-bottom: 30px;
+    animation-duration: 20s;
+  }
+  
+  .gallery-strip img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-section {
+    padding: 40px 0;
+  }
+  
+  .gallery-strip img {
+    width: 120px;
+    height: 120px;
+  }
 }
