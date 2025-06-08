@@ -1187,7 +1187,9 @@ body {
   object-fit: contain;
 }
 
-
+.black-content{
+  margin-top: -8px;
+}
 
 @media (max-width: 768px) {
   #social {
