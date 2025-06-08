@@ -274,33 +274,32 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 190px;
-  max-width: 1400px;
-  width: 100%;
+  gap: 5vw;
+  max-width: 90%;
+  width: 90%;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 2vw;
 }
 
 .main-character img {
-  width: 140%;
-  /* max-width: 450px; */
-  min-width: 300px;
+  width: 35vw;
+  max-width: 500px;
+  min-width: 280px;
   height: auto;
 }
 
 .social-photos {
   display: flex;
   flex-direction: column;
-  /* gap: 30px; */
-  padding: 20px;
+  padding: 1vw;
   align-items: center;
-  width: 35vw;
-  max-width: 500px;
-  min-width: 280px;
+  width: 30vw;
+  max-width: 450px;
+  min-width: 250px;
 }
 
 .social-photos img {
-  width: 80%;
+  width: 70%;
   height: auto;
   border: none;
   box-shadow: none;
@@ -311,7 +310,7 @@ body {
 
 .social-photos img:nth-child(2) {
   align-self: flex-start;
-  margin-left: -60%;
+  margin-left: -15%;
 }
 
 .social-photos img:nth-child(3) {
@@ -322,55 +321,91 @@ body {
   transform: scale(1.05);
 }
 
-/* Large screens optimization */
-@media (min-width: 1440px) {
+/* Medium screens (1024px-1199px) */
+@media (min-width: 1024px) and (max-width: 1199px) {
   .social-content {
-    gap: 175px;
-    max-width: 1600px;
-    padding: 0 60px;
+    gap: 3vw;
+    max-width: 95%;
+    width: 95%;
+    padding: 0 2vw;
   }
-      .main-character img {
-        width: 100%
-
-    }
-.social-photos img {
-  width: 85%;
-
+  
+  .main-character img {
+    width: 42vw;
+    max-width: 450px;
+  }
+  
+  .social-photos {
+    width: 38vw;
+    max-width: 400px;
+  }
 }
-.social-content {
-    gap: 175px;
-}
-.social-photos img:nth-child(2) {
-    
-    margin-left: -35%;
 
-}
+/* Large screens (1200px-1439px) */
+@media (min-width: 1200px) and (max-width: 1439px) {
+  .social-content {
+    gap: 4vw;
+    max-width: 92%;
+    width: 92%;
+    padding: 0 2vw;
+  }
+  
   .main-character img {
     width: 40vw;
-    /* max-width: 550px; */
+    max-width: 480px;
   }
   
   .social-photos {
-    width: 40vw;
-    max-width: 600px;
+    width: 35vw;
+    max-width: 420px;
   }
 }
 
-@media (min-width: 1920px) {
+/* Extra Large screens (1440px+) */
+@media (min-width: 1440px) {
   .social-content {
-    gap: 400px;
-    max-width: 1800px;
-    padding: 0 80px;
+    gap: 6vw;
+    max-width: 85%;
+    width: 85%;
+    padding: 0 3vw;
   }
   
-  /* .main-character img {
-    width: 35vw;
-    max-width: 650px;
-  } */
+  .main-character img {
+    width: 38vw;
+    max-width: 550px;
+  }
   
   .social-photos {
-    width: 45vw;
-    max-width: 700px;
+    width: 32vw;
+    max-width: 500px;
+  }
+  
+  /* .social-photos img {
+    width: 85%;
+  } */
+  
+  .social-photos img:nth-child(2) {
+    margin-left: -35%;
+  }
+}
+
+/* Ultra Large screens (1920px+) */
+@media (min-width: 1920px) {
+  .social-content {
+    gap: 8vw;
+    max-width: 80%;
+    width: 80%;
+    padding: 0 4vw;
+  }
+  
+  .main-character img {
+    width: 35vw;
+    max-width: 600px;
+  }
+  
+  .social-photos {
+    width: 30vw;
+    max-width: 550px;
   }
 }
 
@@ -657,18 +692,7 @@ body {
   }
   
   /* Even smaller screens optimization */
-  .social-content {
-    padding: 0 10px;
-  }
-  
-  .main-character img {
-    max-width: 250px;
-  }
-  
-  .social-photos img {
-    max-width: 180px;
-    width: 75%;
-  }
+  /* Mobile styles handled in main mobile section */
 }
 .hero-section {
   margin-top: 90px;
@@ -699,9 +723,7 @@ body {
     background: url("images/1024.png");
   }
 
-  .social-content{
-    gap: 260px;
-  }
+  /* Mobile styles handled separately below */
 }
 
 @media (max-width: 768px) {
@@ -1328,36 +1350,11 @@ body {
     align-self: center;
   }
 }
-@media (min-width: 1024px) {
+/* Cleaned up - styles moved above */
 
-.social-content {
-    gap: 405px;
-}
-.main-character img {
-    width: 160%;
+/* Cleaned up - styles moved above */
 
-
-}
-
-}
-
-@media (min-width: 1240px) {
-
-.social-content {
-    gap: 470px;
-}
-  .social-photos img {
-  width: 85%;
-
-}
-}
-
-@media (min-width: 1700px) {
-
-.social-content {
-    gap: 560px;
-}
-}
+/* Cleaned up - styles moved above */
 
 /* Gallery Section */
 .gallery-section {
