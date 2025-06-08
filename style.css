@@ -1090,8 +1090,9 @@ body {
 
 @media (max-width: 480px) {
   .hero-image {
+    content: url("images/720.png");
     height: 60vh;
-    margin-top: 60px;
+    margin-top: 90px;
     object-fit: cover;
     width: 100vw;
   }
