@@ -274,7 +274,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 80px;
+  gap: 190px;
   max-width: 1400px;
   width: 100%;
   margin: 0 auto;
@@ -282,9 +282,9 @@ body {
 }
 
 .main-character img {
-  width: 25vw;
-  max-width: 450px;
-  min-width: 250px;
+  width: 80%;
+  /* max-width: 450px; */
+  min-width: 300px;
   height: auto;
 }
 
@@ -300,7 +300,7 @@ body {
 }
 
 .social-photos img {
-  width: 100%;
+  width: 65%;
   height: auto;
   border: none;
   box-shadow: none;
@@ -325,14 +325,29 @@ body {
 /* Large screens optimization */
 @media (min-width: 1440px) {
   .social-content {
-    gap: 120px;
+    gap: 175px;
     max-width: 1600px;
     padding: 0 60px;
   }
-  
+      .main-character img {
+        width: 100%
+
+    }
+.social-photos img {
+  width: 85%;
+
+}
+.social-content {
+    gap: 175px;
+}
+.social-photos img:nth-child(2) {
+    
+    margin-left: -35%;
+
+}
   .main-character img {
-    width: 30vw;
-    max-width: 550px;
+    width: 40vw;
+    /* max-width: 550px; */
   }
   
   .social-photos {
@@ -343,15 +358,15 @@ body {
 
 @media (min-width: 1920px) {
   .social-content {
-    gap: 150px;
+    gap: 400px;
     max-width: 1800px;
     padding: 0 80px;
   }
   
-  .main-character img {
+  /* .main-character img {
     width: 35vw;
     max-width: 650px;
-  }
+  } */
   
   .social-photos {
     width: 45vw;
@@ -623,13 +638,23 @@ body {
     min-height: 90vh;
     background: url("images/1440.png");
   }
+  .social-photos img {
+  width: 85%;
+
 }
+}
+
+
 /* Hero Section */
 
 @media (max-width: 1024px) {
   .hero-section {
     min-height: 80vh;
     background: url("images/1024.png");
+  }
+
+  .social-content{
+    gap: 260px;
   }
 }
 
@@ -1218,7 +1243,7 @@ body {
   }
   
   .social-photos img {
-    width: 100%;
+    width: 80%;
     max-width: 220px;
     height: auto;
     margin-bottom: 0;
@@ -1232,4 +1257,15 @@ body {
   .social-photos img:nth-child(3) {
     align-self: center;
   }
+}
+@media (min-width: 1024px) {
+
+.social-content {
+    gap: 405px;
+}
+.main-character img {
+    width: 160%;
+
+
+}
 }
