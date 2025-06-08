@@ -953,12 +953,21 @@ body {
 @media (max-width: 1440px) {
   .hero-image {
     content: url("images/1440.png");
+    height: 85vh;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-image {
+
+    height: 85vh;
   }
 }
 
 @media (max-width: 1024px) {
   .hero-image {
     content: url("images/1024.png");
+    height: 85vh;
   }
 }
 
