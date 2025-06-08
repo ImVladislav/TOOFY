@@ -473,7 +473,7 @@ body {
 }
 
 .contract-address {
-  background: rgba(0, 0, 0, 0.8);
+  background: url("images/contract.png") center/contain no-repeat;
   padding: 20px;
   border-radius: 10px;
   margin: 30px auto;
@@ -483,8 +483,7 @@ body {
 }
 
 .contract-address:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  /* Removed shadow and transform effects */
 }
 
 .contract-address code {
@@ -492,6 +491,12 @@ body {
   font-family: 'Creepster', cursive;
   font-size: 1.2rem;
   word-break: break-all;
+  transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+.contract-address:hover code {
+  color: #57ff01;
+  font-size: 1.4rem;
 }
 
 /* Copy Modal */
@@ -1122,6 +1127,7 @@ body {
   
   /* Contract address mobile fix */
   .contract-address {
+    background: url("images/contract.png") center/contain no-repeat;
     width: calc(100% - 30px);
     max-width: 500px;
     margin: 30px auto;
@@ -1134,6 +1140,12 @@ body {
     word-break: break-all;
     overflow-wrap: break-word;
     line-height: 1.4;
+    transition: color 0.3s ease, font-size 0.3s ease;
+  }
+  
+  .contract-address:hover code {
+    color: #57ff01;
+    font-size: 1.1rem;
   }
 }
 
@@ -1152,12 +1164,19 @@ body {
   }
   
   .contract-address {
+    background: url("images/contract.png") center/contain no-repeat;
     width: calc(100% - 20px);
     padding: 15px;
   }
   
   .contract-address code {
     font-size: 1rem;
+    transition: color 0.3s ease, font-size 0.3s ease;
+  }
+  
+  .contract-address:hover code {
+    color: #57ff01;
+    font-size: 1.2rem;
   }
 }
 
