@@ -1670,7 +1670,7 @@ body {
     content: url("images/480.png");
     height: 95vh;
     margin-top: 80px;
-    object-fit: cover;
+    object-fit: contain;
     width: 100vw;
   }
 }
