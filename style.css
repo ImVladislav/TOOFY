@@ -1473,11 +1473,13 @@ body {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 20px;
+  width: 100%;
 }
 
 .gif-block {
   flex: 1;
   max-width: 600px;
+  width: 45%;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -1495,8 +1497,49 @@ body {
   vertical-align: top;
 }
 
+/* Extra Large screens (1440px+) */
+@media (min-width: 1440px) {
+  .gif-block {
+    width: 40%;
+    max-width: 550px;
+  }
+}
+
+/* Large screens (1200px-1439px) */
+@media (min-width: 1200px) and (max-width: 1439px) {
+  .gif-block {
+    width: 42%;
+    max-width: 500px;
+  }
+}
+
+/* Medium screens (992px-1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .gif-block {
+    width: 45%;
+    max-width: 450px;
+  }
+  
+  .gif-container {
+    gap: 25px;
+  }
+}
+
+/* Small screens (768px-991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .gif-block {
+    width: 47%;
+    max-width: 400px;
+  }
+  
+  .gif-container {
+    gap: 20px;
+    padding: 0 15px;
+  }
+}
+
 /* Mobile gallery optimization */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .gallery-section {
     padding: 60px 0;
   }
@@ -1508,11 +1551,12 @@ body {
   }
 
   .gif-block {
-    width: 100%;
-    max-width: 400px;
+    width: 90%;
+    max-width: 450px;
   }
 }
 
+/* Small mobile screens */
 @media (max-width: 480px) {
   .gallery-section {
     padding: 40px 0;
@@ -1524,16 +1568,20 @@ body {
   }
 
   .gif-block {
-    max-width: 320px;
+    width: 95%;
+    max-width: 350px;
   }
 }
 
-@media (max-width: 640px) {
-  .hero-image {
-    content: url("images/480.png");
-    height: 95vh;
-    margin-top: 80px;
-    object-fit: cover;
-    width: 100vw;
+/* Extra small mobile screens */
+@media (max-width: 360px) {
+  .gif-block {
+    width: 98%;
+    max-width: 300px;
+  }
+  
+  .gif-container {
+    padding: 0 8px;
   }
 }
+
