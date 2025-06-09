@@ -112,6 +112,14 @@ body {
   opacity: 1;
 }
 
+.nav-links li:nth-last-child(-n + 2) .nav-link {
+  min-height: 50px;
+}
+
+.nav-links li:nth-last-child(-n + 2) .nav-image {
+  height: 60px;
+}
+
 /* Burger Menu */
 .burger-menu {
   display: none;
