@@ -533,7 +533,7 @@ body {
 
 .htb-title {
   width: auto;
-  height: 100px;
+  height: 180px;
   margin-bottom: 50px;
   object-fit: contain;
 }
@@ -1441,7 +1441,7 @@ body {
 
 .social-title {
   width: auto;
-  height: 240px;
+  height: 140px;
   margin-bottom: 40px;
   object-fit: contain;
 }
@@ -1456,7 +1456,7 @@ body {
   }
 
   .social-title {
-    height: 180px;
+    height: 100px;
     margin-bottom: 30px;
   }
 
@@ -1527,6 +1527,8 @@ body {
   padding: 100px 0;
   overflow: hidden;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .gif-container {
