@@ -1481,6 +1481,8 @@ body {
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  background: transparent;
+  line-height: 0;
 }
 
 .gallery-gif {
@@ -1488,6 +1490,9 @@ body {
   height: auto;
   display: block;
   object-fit: cover;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
 }
 
 /* Mobile gallery optimization */
