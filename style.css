@@ -175,6 +175,10 @@ body {
     flex-shrink: 0;
   }
 
+  .nav-links li:nth-last-child(-n + 2) .nav-image {
+    height: 40px;
+  }
+
   .burger-menu {
     display: block;
     position: relative;
@@ -200,7 +204,7 @@ body {
   }
 
   .nav-links.active {
-    left: 50%;
+    left: 45%;
   }
 
   .nav-links a {
