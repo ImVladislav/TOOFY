@@ -758,7 +758,7 @@ body {
 @media (max-width: 768px) {
   /* HTB title mobile optimization */
   .htb-title {
-    height: 60px;
+    height: 90px;
     max-width: 90%;
     margin-bottom: 30px;
   }
@@ -785,7 +785,7 @@ body {
 
 @media (max-width: 480px) {
   .htb-title {
-    height: 50px;
+    height: 70px;
     max-width: 95%;
     margin-bottom: 25px;
   }
@@ -1456,7 +1456,7 @@ body {
   }
 
   .social-title {
-    height: 100px;
+    height: 120px;
     margin-bottom: 30px;
   }
 
