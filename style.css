@@ -154,9 +154,25 @@ body {
 
 /* Mobile Styles */
 @media (max-width: 768px) {
+  /* General mobile overflow fixes */
+  * {
+    max-width: 100vw;
+  }
+
+  body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+
+  /* Navigation mobile fixes */
   .navigation {
     padding: 15px;
     justify-content: space-between;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
   }
 
   .nav-logo {
@@ -183,28 +199,27 @@ body {
     display: block;
     position: relative;
     margin-right: 10px;
+    z-index: 1000;
   }
 
   .nav-links {
     position: fixed;
     top: 0;
-    left: -100vw;
-    width: 100vw;
-    max-width: 100%;
+    left: 0;
+    width: 100%;
     height: 100vh;
     background: rgba(255, 255, 255, 0.95);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: left 0.3s ease;
+    transition: transform 0.3s ease;
     z-index: 999;
-    overflow-x: hidden;
-    box-sizing: border-box;
+    transform: translateX(-100%);
   }
 
   .nav-links.active {
-    left: 45%;
+    transform: translateX(0);
   }
 
   .nav-links a {
@@ -218,29 +233,25 @@ body {
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    transition: transform 0.2s ease;
   }
 
-  .nav-links a:hover {
-    transform: none;
-  }
-
-  /* Additional mobile navigation fixes */
-  .navigation {
+  /* Section fixes */
+  section, 
+  .container,
+  .how-to-buy-section,
+  #social {
     width: 100%;
     max-width: 100vw;
     overflow-x: hidden;
     box-sizing: border-box;
   }
 
-  .burger-menu {
-    position: relative;
-    right: 0;
-    margin-right: 15px;
+  .how-to-buy-section {
+    padding: 80px 15px;
   }
 
-  .hero-image {
-    margin-top: 85px;
+  #social {
+    padding: 50px 15px;
   }
 }
 
@@ -1150,19 +1161,57 @@ body {
 @media (max-width: 768px) {
   /* General mobile overflow fixes */
   * {
-    max-width: 110vw;
+    max-width: 100vw;
+  }
+
+  body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
   }
 
   /* How to Buy section mobile fix */
   .how-to-buy-section {
     width: 100%;
-    max-width: 110vw;
+    max-width: 100vw;
     overflow-x: hidden;
     padding: 80px 15px;
     box-sizing: border-box;
-    background-size: cover;
-    background-position: center;
-    background-attachment: scroll;
+  }
+
+  /* Navigation mobile fixes */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    z-index: 999;
+    transform: translateX(-100%);
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+    left: 0;
+  }
+
+  .nav-links a {
+    margin: 15px 0;
+    font-size: 24px;
+    text-align: center;
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
   }
 
   /* Social section mobile fix */
@@ -1172,9 +1221,22 @@ body {
     overflow-x: hidden;
     padding: 50px 15px;
     box-sizing: border-box;
-    background-size: cover;
-    background-position: center;
-    background-attachment: scroll;
+  }
+
+  /* Container fixes */
+  .container {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  /* Section fixes */
+  section {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
   }
 
   /* Buy steps mobile fix */
