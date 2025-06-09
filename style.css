@@ -1255,7 +1255,7 @@ body {
 
 .scroll-image-wrapper {
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
 }
 
@@ -1274,8 +1274,8 @@ body {
   height: 100%;
   width: auto;
   position: absolute;
-  left: -30px;
-  top: 0;
+  left: -8%;
+  top: -3%;
   object-fit: cover;
   transform-origin: left center;
   z-index: 3;
