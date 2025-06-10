@@ -99,7 +99,7 @@ function init() {
   
   if (contractAddress && copyModal) {
     contractAddress.addEventListener("click", async () => {
-      const contractText = "DSFDDFSF3543GDFFFGDRKJLKADW4G546RYKJL";
+      const contractText = "LH1mCqPWhT6vfNSsm1fDX5TzT2dcBA7Sc8iDsmPpump";
       
       try {
         // Copy to clipboard
